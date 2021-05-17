@@ -1,0 +1,29 @@
+>>> def checkPrime(n):
+    if n <= 1:
+        return False
+    if n == 2:
+        return True
+
+    else:
+        for i in range(2, int(n / 2) + 1):
+            if (n % i) == 0:
+                return False
+                break
+        else:
+            return True
+
+def twentyPrimes():
+    primes = []
+    for i in range(1000):
+        if (checkPrime(i) == True):
+            primes.append(i)
+        if (len(primes) == 20):
+            break
+    return primes
+
+def fakePrimetwo(array):
+    fake = []
+    for i in range(19):
+        fake.append(array[i] * array[i + 1])
+    for i in range(19):
+        print(fake[i]
