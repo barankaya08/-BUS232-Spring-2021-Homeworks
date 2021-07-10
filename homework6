@@ -1,1 +1,40 @@
 
+# Func to check whether a no is prime or not
+def checkPrime(n):
+    i = 2
+    while i < n:
+        if n % i == 0:
+            return 0
+            exit()
+        i = i + 1
+    return 1
+
+
+# Func to return a list of first 20 prime numbers
+def first20Prime():
+    res = []
+    cnt = 0
+    n = 2
+    while cnt < 20:
+        if checkPrime(n):
+            res.append(n)
+            cnt += 1
+        n += 1
+    return res
+
+
+a = first20Prime()
+print('First 20 prime nos are : ', a)
+print()
+
+
+# Func to generate and print first 19 fake prime numbers
+def fakePrimes():
+    primes = first20Prime()
+    for i in range(len(primes) - 1):
+        fakePrime = primes[i] * primes[i + 1]
+        print('Fake prime in position ' + str(i + 1) + ' is ' + str(fakePrime) + '. It is generated using ' + str(
+            primes[i]) + ' and ' + str(primes[i + 1]))
+
+
+fakePrimes()
